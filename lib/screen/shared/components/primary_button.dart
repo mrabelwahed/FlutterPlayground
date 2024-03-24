@@ -12,7 +12,7 @@ Widget primaryButton({
         onPressed: function,
         child: Text(
           title,
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );

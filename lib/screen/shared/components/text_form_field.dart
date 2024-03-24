@@ -13,7 +13,7 @@ Widget textInput({
    labelText: hint,
    prefixIcon: prefixIcon,
    suffixIcon: suffixIcon,
-   border: OutlineInputBorder(),),
+   border: const OutlineInputBorder(),),
    obscureText: hasObscureText,
    controller:  controller,
    validator: validate,

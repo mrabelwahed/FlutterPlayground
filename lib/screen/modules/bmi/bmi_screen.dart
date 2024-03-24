@@ -25,7 +25,7 @@ class _BMIScreenState extends State<BMIScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI'),
+        title: const Text('BMI'),
       ),
       body: Column(
         children: [
@@ -42,15 +42,15 @@ class _BMIScreenState extends State<BMIScreen> {
                      },
                      child: Container(
                        color: isMale ? Colors.red: Colors.blue,
-                       child: Column(
+                       child: const Column(
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [
-                           Container(
+                           SizedBox(
+                               width: 60.0,
                                child: Padding(
-                                 padding: const EdgeInsets.all(8.0),
+                                 padding: EdgeInsets.all(8.0),
                                  child: Image(image: AssetImage("assets/images/male.jpg"),),
                                ),
-                               width: 60.0,
                            ),
                            Text("Male", style: TextStyle(
                              fontSize: 30,
@@ -70,15 +70,15 @@ class _BMIScreenState extends State<BMIScreen> {
                   },
                   child: Container(
                     color: isMale? Colors.blue: Colors.red,
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
+                            width: 60,
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Image(image: AssetImage("assets/images/female.jpg")),
                             ),
-                             width: 60,
                              ),
                         Text("Female", style: TextStyle(
                             fontSize: 30,
@@ -99,8 +99,8 @@ class _BMIScreenState extends State<BMIScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(
+                    const Padding(
+                      padding: EdgeInsetsDirectional.only(
                         top: 15.0
                       ),
                       child: Text(
@@ -118,11 +118,11 @@ class _BMIScreenState extends State<BMIScreen> {
                         crossAxisAlignment: CrossAxisAlignment.baseline,
                         textBaseline: TextBaseline.alphabetic,
                         children: [
-                          Text('${height}', style: TextStyle(
+                          Text('$height', style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 40.0
                           ),),
-                          Text('CM', style: TextStyle(
+                          const Text('CM', style: TextStyle(
                             fontWeight: FontWeight.normal,
                             fontSize: 15.0
                           ),)
@@ -151,13 +151,13 @@ class _BMIScreenState extends State<BMIScreen> {
                         child: Column(
                            mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                           Text('Age', style: TextStyle(
+                           const Text('Age', style: TextStyle(
                              fontWeight: FontWeight.bold,
                              fontSize: 30.0
                            ),),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('$age', style: TextStyle(
+                              child: Text('$age', style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 30.0
                               ),),
@@ -166,15 +166,15 @@ class _BMIScreenState extends State<BMIScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 FloatingActionButton(
-                                    child: Icon(Icons.add),
+                                    child: const Icon(Icons.add),
                                     onPressed: () {
                                     setState(() {
                                       age++;
                                     });
                                 }),
-                                SizedBox(width: 20,),
+                                const SizedBox(width: 20,),
                                 FloatingActionButton(
-                                    child: Icon(Icons.remove),
+                                    child: const Icon(Icons.remove),
                                     onPressed: () {
                                       setState(() {
                                         age--;
@@ -192,13 +192,13 @@ class _BMIScreenState extends State<BMIScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Weight', style: TextStyle(
+                              const Text('Weight', style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 30.0
                               ),),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text('$weight', style: TextStyle(
+                                child: Text('$weight', style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 30.0
                                 ),),
@@ -207,15 +207,15 @@ class _BMIScreenState extends State<BMIScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   FloatingActionButton(
-                                      child: Icon(Icons.add),
+                                      child: const Icon(Icons.add),
                                       onPressed: () {
                                         setState(() {
                                           weight++;
                                         });
                                       }),
-                                  SizedBox(width: 20,),
+                                  const SizedBox(width: 20,),
                                   FloatingActionButton(
-                                      child: Icon(Icons.remove),
+                                      child: const Icon(Icons.remove),
                                       onPressed: () {
                                         setState(() {
                                           weight--;

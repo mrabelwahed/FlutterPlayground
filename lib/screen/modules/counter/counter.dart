@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CounterScreen extends StatefulWidget {
+  const CounterScreen({super.key});
+
   @override
   State<CounterScreen> createState() => _CounterScreenState();
 }
@@ -12,9 +14,9 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Counter"),
+        title: const Text("Counter"),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,11 +31,11 @@ class _CounterScreenState extends State<CounterScreen> {
                         print(counter);
                       });
                     },
-                    child: Text('MINUS')
+                    child: const Text('MINUS')
                 ),
                 Text(
                   "$counter",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold
                   ),),
@@ -45,7 +47,7 @@ class _CounterScreenState extends State<CounterScreen> {
                       });
 
                     },
-                    child: Text("PLUS")
+                    child: const Text("PLUS")
                 )
               ],
             ),

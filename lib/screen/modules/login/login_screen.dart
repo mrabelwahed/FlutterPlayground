@@ -7,6 +7,8 @@ class LoginScreen extends StatelessWidget {
   var  passwordController = TextEditingController();
   var  emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+
+  LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,59 +22,61 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Login",
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                  textInput(
                      hint: "Email",
-                     prefixIcon: Icon(Icons.email),
+                     prefixIcon: const Icon(Icons.email),
                      hasObscureText: false,
                      keyboardType: TextInputType.emailAddress,
                      controller: emailController,
                    validate: (value) {
-                     if(value !=null && value.isEmpty)
+                     if(value !=null && value.isEmpty) {
                        return "email can not be empty";
+                     }
                      return null;
                    }
                  ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                  textInput(
                      hint: "password",
-                     prefixIcon: Icon(Icons.lock),
-                     suffixIcon: Icon(Icons.visibility),
+                     prefixIcon: const Icon(Icons.lock),
+                     suffixIcon: const Icon(Icons.visibility),
                      controller: passwordController,
                    validate: (value) {
-                     if(value !=null && value.isEmpty)
+                     if(value !=null && value.isEmpty) {
                        return "password can not be empty";
+                     }
                      return null;
                    }
                  ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   primaryButton(title: "Login", function: (){
                     if(formKey.currentState!.validate()){
                       print("login btn is clicked");
-                      print(emailController.text + "" + passwordController.text);
+                      print("${emailController.text}${passwordController.text}");
                     }
 
                   }),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don\'t have account?"),
+                      const Text("Don't have account?"),
                       TextButton(
                           onPressed: (){},
-                          child: Text("Signup")
+                          child: const Text("Signup")
                       )
                     ],
                   )

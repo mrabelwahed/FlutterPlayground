@@ -38,36 +38,38 @@ class MessengerScreen extends StatelessWidget {
     Chat(imageUrl: url, username: "Mahmoud Ramadan", lastMessage: "Hello man, when can i see you?"),
     Chat(imageUrl: url, username: "Mahmoud Ramadan", lastMessage: "Hello man, when can i see you?"),
   ];
+
+  MessengerScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+        leading: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(url),
           ),
         ),
-        title: Text('Chats', style: TextStyle(
+        title: const Text('Chats', style: TextStyle(
           color: Colors.black
         ),
         ),
        actions: [
          IconButton(
              onPressed: (){},
-             icon:  CircleAvatar(
-               child: Icon(Icons.camera_alt),
+             icon:  const CircleAvatar(
                backgroundColor: Colors.blue,
+               child: Icon(Icons.camera_alt),
              )
          )
         ,
          IconButton(
            onPressed: (){},
-           icon: CircleAvatar(
-             child: Icon(Icons.edit),
+           icon: const CircleAvatar(
              backgroundColor: Colors.red,
+             child: Icon(Icons.edit),
 
            ),
          )
@@ -86,8 +88,8 @@ class MessengerScreen extends StatelessWidget {
                      borderRadius: BorderRadius.circular(20),
                      color: Colors.grey[200]
                    ),
-                   child: Padding(
-                     padding: const EdgeInsets.all(14.0),
+                   child: const Padding(
+                     padding: EdgeInsets.all(14.0),
                      child: Row(
                        children: [
                          Icon(Icons.search),
@@ -97,28 +99,28 @@ class MessengerScreen extends StatelessWidget {
                    ),
                  ),
                ),
-               SizedBox(
+               const SizedBox(
                  height: 20,
                ),
-               Container(
+               SizedBox(
                  height: 120,
                  child: ListView.separated(
                    scrollDirection: Axis.horizontal,
                      itemBuilder: (context, index) => createStoryItem(stories[index]),
-                     separatorBuilder: (context, index) => SizedBox(width: 3,),
+                     separatorBuilder: (context, index) => const SizedBox(width: 3,),
                      itemCount: stories.length),
                ),
-               SizedBox(
+               const SizedBox(
                  height: 20,
                ),
-               SizedBox(
+               const SizedBox(
                  height: 10,
                ),
                ListView.separated(
-                   physics: NeverScrollableScrollPhysics(),
+                   physics: const NeverScrollableScrollPhysics(),
                    shrinkWrap: true,
                    itemBuilder:  (context, index) => createChatHistoryItem(chats[index]),
-                   separatorBuilder: (context, index) => SizedBox(height: 10,),
+                   separatorBuilder: (context, index) => const SizedBox(height: 10,),
                    itemCount: chats.length
                )
              ],
@@ -127,7 +129,7 @@ class MessengerScreen extends StatelessWidget {
     );
   }
 
-  Widget createStoryItem(Story story) => Container(
+  Widget createStoryItem(Story story) => SizedBox(
       width: 80,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -152,7 +154,7 @@ class MessengerScreen extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               Text(story.userName, maxLines: 2, overflow: TextOverflow.ellipsis,textAlign: TextAlign.center,),
             ],
           ),
@@ -169,7 +171,7 @@ class MessengerScreen extends StatelessWidget {
             radius: 30,
             backgroundImage: NetworkImage(chat.imageUrl),
           ),
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

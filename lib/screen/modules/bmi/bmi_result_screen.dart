@@ -5,16 +5,16 @@ class BMIResultScreen extends StatelessWidget {
   final double height;
   final int weight;
 
-  BMIResultScreen(
-      {required this.result, required this.height, required this.weight});
+  const BMIResultScreen(
+      {super.key, required this.result, required this.height, required this.weight});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('BMI Result'),
+          title: const Text('BMI Result'),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
+            icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -26,15 +26,15 @@ class BMIResultScreen extends StatelessWidget {
           children: [
             Text(
               'Result: $result',
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
             ),
             Text(
               'Weight: $weight',
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
             ),
             Text(
               'Height: $height',
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
             ),
           ],
         ),

@@ -7,11 +7,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: Text('data'),
+        leading: const Icon(Icons.menu),
+        title: const Text('data'),
         actions: [
           IconButton(
-            icon: Icon(Icons.notification_important),
+            icon: const Icon(Icons.notification_important),
             onPressed: () {
               print("notification button is clicked");
             },
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 print("search button is clicked");
               },
-              icon: Icon(Icons.search))
+              icon: const Icon(Icons.search))
         ],
         backgroundColor: Colors.red,
       ),
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  Image(
+                  const Image(
                     image: NetworkImage(
                         "https://kidlingoo.com/wp-content/uploads/flowers_name_in_english.jpg"
                     ),
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     color: Colors.black.withOpacity(.7),
                     width: 200,
-                    child: Text(
+                    child: const Text(
                       "Flower",
                       textAlign: TextAlign.center,
                       style: TextStyle(
